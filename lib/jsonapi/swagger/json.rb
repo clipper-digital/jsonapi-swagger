@@ -12,6 +12,10 @@ module Jsonapi
         @doc ||= JSON.parse(load) rescue Hash.new{ |h, k| h[k]= {} }
       end
 
+      def host
+        Jsonapi::Swagger.host
+      end
+
       def base_path
         Jsonapi::Swagger.base_path
       end
